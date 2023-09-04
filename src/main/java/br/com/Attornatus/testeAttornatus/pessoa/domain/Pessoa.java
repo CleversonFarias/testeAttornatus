@@ -1,7 +1,6 @@
 package br.com.Attornatus.testeAttornatus.pessoa.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
@@ -16,6 +15,8 @@ import java.util.UUID;
 @Entity
 public class Pessoa {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", updatable = false, unique = true, nullable = false)
     private UUID idPessoa;
     @NotBlank
     private String nomeCompleto;
@@ -24,8 +25,7 @@ public class Pessoa {
     @NotBlank
     private String endereço;
 
-    public Pessoa(String nomeCompleto, LocalDate dataNascimento, String endereço, UUID idPessoa) {
-        this.idPessoa = UUID.randomUUID();
+    public Pessoa(String nomeCompleto, LocalDate dataNascimento, String endereço) {
         this.nomeCompleto = nomeCompleto;
         this.dataNascimento = dataNascimento;
         this.endereço = endereço;
