@@ -1,5 +1,6 @@
 package br.com.Attornatus.testeAttornatus.pessoa.application.api;
 
+import br.com.Attornatus.testeAttornatus.endereco.domain.Endereco;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Value;
@@ -12,6 +13,6 @@ public class PessoaRequest {
     @NotNull
     private LocalDate dataNascimento;
     @NotBlank
-    private String endereço;
+    private Endereco endereco;
 
 }

@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 @Service
 @Log4j2
 public class PessoaApplicationService implements PessoaService {
+
+
     @Override
     public PessoaResponse criaPessoa(PessoaRequest pessoaRequest) {
         log.info("[inicia] PessoaApplicationService - criaPessoa");
