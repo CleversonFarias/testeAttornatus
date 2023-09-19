@@ -1,10 +1,12 @@
 package br.com.Attornatus.testeAttornatus.pessoa.domain;
 
 import br.com.Attornatus.testeAttornatus.endereco.domain.Endereco;
+import br.com.Attornatus.testeAttornatus.pessoa.application.api.PessoaRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -26,9 +28,9 @@ public class Pessoa {
     @NotBlank
     private Endereco endereco;
 
-    public Pessoa(String nomeCompleto, LocalDate dataNascimento, Endereco endereco) {
-        this.nomeCompleto = nomeCompleto;
-        this.dataNascimento = dataNascimento;
-        this.endereco = endereco;
+    public Pessoa(PessoaRequest pessoaRequest) {
+        this.nomeCompleto = pessoaRequest.getNomeCompleto();
+        this.dataNascimento = pessoaRequest.getDataNascimento();
+        this.endereco = pessoaRequest.getEndereco();
     }
 }
