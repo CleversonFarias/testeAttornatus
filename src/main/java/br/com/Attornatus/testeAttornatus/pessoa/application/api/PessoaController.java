@@ -16,6 +16,6 @@ public class PessoaController implements PessoaAPI {
        log.info("[inicia] PessoaController - postPessoa");
        PessoaResponse pessoaCriado = pessoaService.criaPessoa(pessoaRequest);
        log.info("[finaliza] PessoaController - postPessoa");
-       return null;
+       return pessoaCriado;
     }
 }

@@ -2,9 +2,9 @@ package br.com.Attornatus.testeAttornatus.pessoa.application.service;
 
 import br.com.Attornatus.testeAttornatus.pessoa.application.api.PessoaRequest;
 import br.com.Attornatus.testeAttornatus.pessoa.application.api.PessoaResponse;
+//import br.com.Attornatus.testeAttornatus.pessoa.application.repository.PessoaRepository;
 import br.com.Attornatus.testeAttornatus.pessoa.application.repository.PessoaRepository;
 import br.com.Attornatus.testeAttornatus.pessoa.domain.Pessoa;
-import br.com.Attornatus.testeAttornatus.pessoa.repository.PessoaRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
