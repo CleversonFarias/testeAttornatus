@@ -1,11 +1,8 @@
 package br.com.Attornatus.testeAttornatus.pessoa.application.api;
 
-import lombok.Builder;
 import java.util.UUID;
 
-
-@Builder
-public class PessoaResponse {
+public class PessoaListResponse {
     private UUID idPessoa;
-
+    private String nomeCompleto;
 }
