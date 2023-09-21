@@ -24,8 +24,8 @@ public class PessoaController implements PessoaAPI {
     @Override
     public List<PessoaListResponse> getTodasPessoas() {
         log.info("[inicia] PessoaController - List<PessoaListResponse>");
-             //       pessoaListService.listaTodas
+        List<PessoaListResponse> pessoas =  pessoaService.listaTodasPessoas();
         log.info("[finaliza] PessoaController - List<PessoaListResponse>");
-        return null;
+        return pessoas;
     }
 }
