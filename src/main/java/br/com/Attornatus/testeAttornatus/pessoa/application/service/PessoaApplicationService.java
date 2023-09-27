@@ -1,13 +1,16 @@
 package br.com.Attornatus.testeAttornatus.pessoa.application.service;
 
+import br.com.Attornatus.testeAttornatus.pessoa.application.api.PessoaListResponse;
 import br.com.Attornatus.testeAttornatus.pessoa.application.api.PessoaRequest;
 import br.com.Attornatus.testeAttornatus.pessoa.application.api.PessoaResponse;
+//import br.com.Attornatus.testeAttornatus.pessoa.application.repository.PessoaRepository;
 import br.com.Attornatus.testeAttornatus.pessoa.application.repository.PessoaRepository;
 import br.com.Attornatus.testeAttornatus.pessoa.domain.Pessoa;
-import br.com.Attornatus.testeAttornatus.pessoa.repository.PessoaRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @Log4j2
@@ -23,5 +26,13 @@ public class PessoaApplicationService implements PessoaService {
         return PessoaResponse.builder()
                 .idPessoa(pessoa.getIdPessoa())
                 .build();
+    }
+
+    @Override
+    public List<PessoaListResponse> listaTodasPessoas() {
+        log.info("[inicia] PessoaApplicationService - listaTodasPessoas");
+        List<Pessoa> pessoas = pessoaRepository.listaTodasPessoas();
+        log.info("[finaliza] PessoaApplicationService - listaTodasPessoas");
+        return PessoaListResponse.convert(pessoas);
     }
 }

@@ -1,6 +1,5 @@
 package br.com.Attornatus.testeAttornatus.pessoa.domain;
 
-import br.com.Attornatus.testeAttornatus.endereco.domain.Endereco;
 import br.com.Attornatus.testeAttornatus.pessoa.application.api.PessoaRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -19,18 +18,18 @@ import java.util.UUID;
 public class Pessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", updatable = false, unique = true, nullable = false)
+    @Column(name = "idPessoa", updatable = false, unique = true, nullable = false)
     private UUID idPessoa;
     @NotBlank
     private String nomeCompleto;
     @NotNull
     private LocalDate dataNascimento;
-    @NotBlank
-    private Endereco endereco;
+//    @NotBlank
+//    private Endereco endereco;
 
     public Pessoa(PessoaRequest pessoaRequest) {
         this.nomeCompleto = pessoaRequest.getNomeCompleto();
         this.dataNascimento = pessoaRequest.getDataNascimento();
-        this.endereco = pessoaRequest.getEndereco();
+     //   this.endereco = pessoaRequest.getEndereco();
     }
 }
