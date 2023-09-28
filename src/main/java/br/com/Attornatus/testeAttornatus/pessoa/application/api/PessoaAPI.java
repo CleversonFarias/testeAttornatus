@@ -18,6 +18,7 @@ public interface PessoaAPI {
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK)
     List<PessoaListResponse> getTodasPessoas();
+
     @GetMapping(value = "/{idPessoa}")
     @ResponseStatus(code = HttpStatus.OK)
     PessoaDetalhadaResponse getPessoaAtravesId (@PathVariable UUID idPessoa);
