@@ -8,6 +8,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Repository
@@ -35,9 +36,9 @@ public class PessoaInfraRepository implements PessoaRepository {
     @Override
     public PessoaDetalhadaResponse buscaPessoaAtravesId(UUID idPessoa) {
         log.info("[inicia] PessoaInfraRepository - buscaPessoaAtravesId");
-       // List<Pessoa> todasPessoas = pessoaSpringDataJPARepository.findAll();
+        Optional<Pessoa> pessoa = pessoaSpringDataJPARepository.findById(idPessoa);
         log.info("[finaliza] PessoaInfraRepository - buscaPessoaAtravesId");
-        return null;
+        return pessoa;
     }
 }
 
