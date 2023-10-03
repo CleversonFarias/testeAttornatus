@@ -1,6 +1,5 @@
 package br.com.Attornatus.testeAttornatus.pessoa.application.api;
 
-import br.com.Attornatus.testeAttornatus.pessoa.domain.Pessoa;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +17,7 @@ public interface PessoaAPI {
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK)
     List<PessoaListResponse> getTodasPessoas();
+
     @GetMapping(value = "/{idPessoa}")
     @ResponseStatus(code = HttpStatus.OK)
     PessoaDetalhadaResponse getPessoaAtravesId (@PathVariable UUID idPessoa);

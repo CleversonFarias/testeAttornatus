@@ -1,5 +1,6 @@
 package br.com.Attornatus.testeAttornatus.pessoa.infra;
 
+import br.com.Attornatus.testeAttornatus.pessoa.application.api.PessoaDetalhadaResponse;
 import br.com.Attornatus.testeAttornatus.pessoa.application.repository.PessoaRepository;
 import br.com.Attornatus.testeAttornatus.pessoa.domain.Pessoa;
 import lombok.RequiredArgsConstructor;
@@ -7,6 +8,8 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Repository
 @Log4j2
@@ -28,6 +31,14 @@ public class PessoaInfraRepository implements PessoaRepository {
         List<Pessoa> todasPessoas = pessoaSpringDataJPARepository.findAll();
         log.info("[finaliza] PessoaInfraRepository - listaTodasPessoas");
         return todasPessoas;
+    }
+
+    @Override
+    public PessoaDetalhadaResponse buscaPessoaAtravesId(UUID idPessoa) {
+        log.info("[inicia] PessoaInfraRepository - buscaPessoaAtravesId");
+        Optional<Pessoa> pessoa = pessoaSpringDataJPARepository.findById(idPessoa);
+        log.info("[finaliza] PessoaInfraRepository - buscaPessoaAtravesId");
+        return pessoa;
     }
 }
 
