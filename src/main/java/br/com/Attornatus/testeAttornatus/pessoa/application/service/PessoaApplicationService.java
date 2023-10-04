@@ -44,5 +44,4 @@ public class PessoaApplicationService implements PessoaService {
         log.info("[finaliza] PessoaApplicationService - buscaPessoaPeloId");
         return new PessoaDetalhadaResponse(pessoa);
     }
-
 }
