@@ -20,5 +20,9 @@ public interface PessoaAPI {
 
     @GetMapping(value = "/{idPessoa}")
     @ResponseStatus(code = HttpStatus.OK)
-    PessoaDetalhadaResponse getPessoaAtravesId (@PathVariable UUID idPessoa);
+    PessoaDetalhadaResponse getPessoaAtravesId(@PathVariable UUID idPessoa);
+
+    @DeleteMapping(value = "/{idPessoa}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void deletePessoaAtravesId(@PathVariable UUID idPessoa);
 }
