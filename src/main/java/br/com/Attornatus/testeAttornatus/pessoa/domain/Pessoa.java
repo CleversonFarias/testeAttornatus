@@ -18,7 +18,7 @@ import java.util.UUID;
 public class Pessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "idPessoa", updatable = false, unique = true, nullable = false)
+    @Column(columnDefinition = "uuid", name = "idPessoa", updatable = false, unique = true, nullable = false)
     private UUID idPessoa;
     @NotBlank
     private String nomeCompleto;
@@ -32,4 +32,5 @@ public class Pessoa {
         this.dataNascimento = pessoaRequest.getDataNascimento();
      //   this.endereco = pessoaRequest.getEndereco();
     }
+
 }

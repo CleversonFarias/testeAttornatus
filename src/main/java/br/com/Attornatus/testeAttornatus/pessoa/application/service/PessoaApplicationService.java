@@ -45,4 +45,11 @@ public class PessoaApplicationService implements PessoaService {
         return new PessoaDetalhadaResponse(pessoa);
     }
 
+    @Override
+    public void deletaPessoaPeloId(UUID idPessoa) {
+        log.info("[inicia] PessoaApplicationService - deletaPessoaPeloId");
+        Pessoa pessoa = pessoaRepository.buscaPessoaAtravesId(idPessoa);
+        pessoaRepository.deletaPessoaAtravesId(pessoa);
+        log.info("[finaliza] PessoaApplicationService - deletaPessoaPeloId");
+    }
 }
