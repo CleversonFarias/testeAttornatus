@@ -1,6 +1,6 @@
 package br.com.Attornatus.testeAttornatus.pessoa.application.api;
 
-//import br.com.Attornatus.testeAttornatus.pessoa.domain.Endereco;
+//import br.com.Attornatus.testeAttornatus.endereco.domain.Endereco;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Value;
