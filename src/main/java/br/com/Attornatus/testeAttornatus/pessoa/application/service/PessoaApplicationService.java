@@ -1,9 +1,6 @@
 package br.com.Attornatus.testeAttornatus.pessoa.application.service;
 
-import br.com.Attornatus.testeAttornatus.pessoa.application.api.PessoaDetalhadaResponse;
-import br.com.Attornatus.testeAttornatus.pessoa.application.api.PessoaListResponse;
-import br.com.Attornatus.testeAttornatus.pessoa.application.api.PessoaRequest;
-import br.com.Attornatus.testeAttornatus.pessoa.application.api.PessoaResponse;
+import br.com.Attornatus.testeAttornatus.pessoa.application.api.*;
 import br.com.Attornatus.testeAttornatus.pessoa.application.repository.PessoaRepository;
 import br.com.Attornatus.testeAttornatus.pessoa.domain.Pessoa;
 import lombok.RequiredArgsConstructor;
@@ -51,5 +48,14 @@ public class PessoaApplicationService implements PessoaService {
         Pessoa pessoa = pessoaRepository.buscaPessoaAtravesId(idPessoa);
         pessoaRepository.deletaPessoaAtravesId(pessoa);
         log.info("[finaliza] PessoaApplicationService - deletaPessoaPeloId");
+    }
+
+    @Override
+    public void alteraPessoaAtravesId(UUID idPessoa, PessoaAlteracaoRequest pessoaAlteracaoRequest) {
+        log.info("[inicia] PessoaApplicationService - alteraPessoaAtravesId");
+        Pessoa pessoa = pessoaRepository.buscaPessoaAtravesId(idPessoa);
+        pessoa.altera(pessoaAlteracaoRequest);
+        pessoaRepository.salva(pessoa);
+        log.info("[finaliza] PessoaApplicationService - alteraPessoaAtravesId");
     }
 }

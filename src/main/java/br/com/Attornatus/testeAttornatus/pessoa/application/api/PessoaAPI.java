@@ -25,4 +25,9 @@ public interface PessoaAPI {
     @DeleteMapping(value = "/{idPessoa}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     void deletePessoaAtravesId(@PathVariable UUID idPessoa);
+
+    @PatchMapping(value = "/{idPessoa}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void patchAlteraPessoa(@Valid @RequestBody PessoaAlteracaoRequest pessoaAlteracaoRequest,
+                    @PathVariable UUID idPessoa);
 }

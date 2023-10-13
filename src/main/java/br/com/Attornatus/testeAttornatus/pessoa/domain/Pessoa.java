@@ -1,5 +1,6 @@
 package br.com.Attornatus.testeAttornatus.pessoa.domain;
 
+import br.com.Attornatus.testeAttornatus.pessoa.application.api.PessoaAlteracaoRequest;
 import br.com.Attornatus.testeAttornatus.pessoa.application.api.PessoaRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -33,4 +34,9 @@ public class Pessoa {
      //   this.endereco = pessoaRequest.getEndereco();
     }
 
+    public void altera(PessoaAlteracaoRequest pessoaAlteracaoRequest) {
+        this.nomeCompleto = pessoaAlteracaoRequest.getNomeCompleto();
+        this.dataNascimento = pessoaAlteracaoRequest.getDataNascimento();
+
+    }
 }
