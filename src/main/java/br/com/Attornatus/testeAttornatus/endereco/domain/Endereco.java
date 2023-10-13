@@ -1,6 +1,7 @@
 package br.com.Attornatus.testeAttornatus.endereco.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -14,8 +15,11 @@ public class Endereco {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(columnDefinition = "uuid", name = "idEndereco", updatable = false, unique = true, nullable = false)
     private UUID idEndereco;
+    @NotBlank
     private String logradouro;
+    @NotBlank
     private String cep;
-    private String Número;
+    private String numero;
+    @NotBlank
     private String cidade;
 }
