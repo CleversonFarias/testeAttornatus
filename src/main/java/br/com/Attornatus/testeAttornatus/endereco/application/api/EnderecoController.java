@@ -17,7 +17,8 @@ public class EnderecoController implements EnderecoAPI {
     public EnderecoResponse postEndereco(UUID idPessoa, EnderecoRequest enderecoRequest) {
         log.info("[inicia] EnderecoController - postEndereco");
         log.info("[idPessoa] {}", idPessoa);
+        EnderecoResponse endereco = enderecoService.criaEndereco(idPessoa, enderecoRequest);
         log.info("[finaliza] EnderecoController - postEndereco");
-        return null;
+        return endereco;
     }
 }
