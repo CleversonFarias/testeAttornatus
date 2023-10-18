@@ -1,6 +1,5 @@
 package br.com.Attornatus.testeAttornatus.endereco.application.api;
 
-import lombok.Builder;
 import lombok.Value;
 
 import java.util.UUID;
