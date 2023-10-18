@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.UUID;
 
 @Log4j2
@@ -20,5 +21,14 @@ public class EnderecoController implements EnderecoAPI {
         EnderecoResponse endereco = enderecoService.criaEndereco(idPessoa, enderecoRequest);
         log.info("[finaliza] EnderecoController - postEndereco");
         return endereco;
+    }
+
+    @Override
+    public List<EnderecoPessoaListResponse> getEnderecosPessoaComId(UUID idPessoa) {
+        log.info("[inicia] EnderecoController - getEnderecosPessoaComId");
+        log.info("[idPessoa] {}", idPessoa);
+        List<EnderecoPessoaListResponse> enderecoPessoaList = enderecoService.buscaEnderecoPessoaComId(idPessoa);
+        log.info("[finaliza] EnderecoController - getEnderecosPessoaComId");
+        return enderecoPessoaList ;
     }
 }
