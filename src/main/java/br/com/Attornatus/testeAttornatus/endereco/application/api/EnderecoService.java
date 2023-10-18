@@ -5,5 +5,6 @@ import java.util.UUID;
 
 public interface EnderecoService {
     EnderecoResponse criaEndereco(UUID idPessoa, EnderecoRequest enderecoRequest);
-    List<EnderecoPessoaListResponse> buscaEnderecoPessoaComId(UUID idPessoa);
+    List<EnderecoPessoaListResponse> buscaEnderecosPessoaComId(UUID idPessoa);
+    EnderecoPessoaDetalheResponse buscaEnderecoPessoaComId(UUID idPessoa, UUID idEndereco);
 }

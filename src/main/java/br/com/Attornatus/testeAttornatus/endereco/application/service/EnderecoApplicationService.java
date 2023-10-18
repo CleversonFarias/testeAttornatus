@@ -1,9 +1,6 @@
 package br.com.Attornatus.testeAttornatus.endereco.application.service;
 
-import br.com.Attornatus.testeAttornatus.endereco.application.api.EnderecoPessoaListResponse;
-import br.com.Attornatus.testeAttornatus.endereco.application.api.EnderecoRequest;
-import br.com.Attornatus.testeAttornatus.endereco.application.api.EnderecoResponse;
-import br.com.Attornatus.testeAttornatus.endereco.application.api.EnderecoService;
+import br.com.Attornatus.testeAttornatus.endereco.application.api.*;
 import br.com.Attornatus.testeAttornatus.endereco.domain.Endereco;
 import br.com.Attornatus.testeAttornatus.pessoa.application.service.PessoaService;
 import lombok.RequiredArgsConstructor;
@@ -31,11 +28,19 @@ public class EnderecoApplicationService implements EnderecoService {
     }
 
     @Override
-    public List<EnderecoPessoaListResponse> buscaEnderecoPessoaComId(UUID idPessoa) {
+    public List<EnderecoPessoaListResponse> buscaEnderecosPessoaComId(UUID idPessoa) {
         log.info("[inicia] EnderecoApplicationService - buscaEnderecoPessoaComId");
         pessoaService.buscaPessoaPeloId(idPessoa);
         List<Endereco> enderecoDaPessoa = enderecoRepository.buscaEnderecoPessoaComId(idPessoa);
         log.info("[finaliza] EnderecoApplicationService - buscaEnderecoPessoaComId");
         return EnderecoPessoaListResponse.converte(enderecoDaPessoa);
+    }
+
+    @Override
+    public EnderecoPessoaDetalheResponse buscaEnderecoPessoaComId(UUID idPessoa, UUID idEndereco) {
+        log.info("[inicia] EnderecoApplicationService - buscaEnderecosPessoaComId");
+      
+        log.info("[finaliza] EnderecoApplicationService - buscaEnderecosPessoaComId");
+        return null;
     }
 }
