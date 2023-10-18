@@ -27,17 +27,17 @@ public class EnderecoController implements EnderecoAPI {
     public List<EnderecoPessoaListResponse> getEnderecosPessoaComId(UUID idPessoa) {
         log.info("[inicia] EnderecoController - getEnderecosPessoaComId");
         log.info("[idPessoa] {}", idPessoa);
-        List<EnderecoPessoaListResponse> enderecoPessoaList = enderecoService.buscaEnderecoPessoaComId(idPessoa);
+        List<EnderecoPessoaListResponse> enderecosPessoaList = enderecoService.buscaEnderecosPessoaComId(idPessoa);
         log.info("[finaliza] EnderecoController - getEnderecosPessoaComId");
-        return enderecoPessoaList ;
+        return enderecosPessoaList ;
     }
 
     @Override
     public EnderecoPessoaDetalheResponse getEnderecoPessoaComId(UUID idPessoa, UUID idEndereco) {
         log.info("[inicia] EnderecoController - getEnderecoPessoaComId");
         log.info("[idPessoa] {} - [idEndereco] {}", idPessoa, idEndereco);
-
+        EnderecoPessoaDetalheResponse enderecoPessoa = enderecoService.buscaEnderecoPessoaComId(idPessoa, idEndereco);
         log.info("[finaliza] EnderecoController - getEnderecoPessoaComId");
-        return null;
+        return enderecoPessoa;
     }
 }
