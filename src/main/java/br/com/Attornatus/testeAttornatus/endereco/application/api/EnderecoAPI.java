@@ -1,6 +1,7 @@
 package br.com.Attornatus.testeAttornatus.endereco.application.api;
 
 import jakarta.validation.Valid;
+import lombok.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,5 +23,9 @@ public interface EnderecoAPI  {
     @GetMapping(value = "{idEndereco}")
     @ResponseStatus(code = HttpStatus.OK)
     EnderecoPessoaDetalheResponse getEnderecoPessoaComId(@PathVariable UUID idPessoa, @PathVariable UUID idEndereco);
+
+    @DeleteMapping(value = "{idEndereco}")
+    @ResponseStatus (code = HttpStatus.NO_CONTENT)
+    void deleteEnderecoPessoa (@PathVariable UUID idPessoa, @PathVariable UUID idEndereco);
 }
 
