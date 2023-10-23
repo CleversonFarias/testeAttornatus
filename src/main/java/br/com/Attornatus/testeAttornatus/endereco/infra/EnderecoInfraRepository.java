@@ -41,4 +41,11 @@ public class EnderecoInfraRepository implements EnderecoRepository {
         log.info("[finaliza] EnderecoInfraRepository - buscaEnderecoPessoaComId");
         return endereco;
     }
+
+    @Override
+    public void deletaEndereco(Endereco endereco) {
+        log.info("[inicia] EnderecoInfraRepository - deletaEndereco");
+        log.info("[finaliza] EnderecoInfraRepository - deletaEndereco");
+
+    }
 }
