@@ -27,5 +27,9 @@ public interface EnderecoAPI  {
     @DeleteMapping(value = "{idEndereco}")
     @ResponseStatus (code = HttpStatus.NO_CONTENT)
     void deleteEnderecoPessoa (@PathVariable UUID idPessoa, @PathVariable UUID idEndereco);
+
+    @PatchMapping (value = "{idEndereco}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    EnderecoResponse patchEnderecoPessoaComId(@PathVariable UUID idPessoa, @PathVariable UUID idEndereco, @Valid @RequestBody EnderecoAlteracaoRequest enderecoAlteracaoRequest);
 }
 
