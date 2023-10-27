@@ -50,10 +50,10 @@ public class EnderecoController implements EnderecoAPI {
     }
 
     @Override
-    public EnderecoResponse patchEnderecoPessoaComId(UUID idPessoa, UUID idEndereco, EnderecoAlteracaoRequest enderecoAlteracaoRequest) {
+    public void patchEnderecoPessoaComId(UUID idPessoa, UUID idEndereco, EnderecoAlteracaoRequest enderecoAlteracaoRequest) {
         log.info("[inicia] EnderecoController - patchEnderecoPessoaComId");
         log.info("[idPessoa] {}", idPessoa);
-        log.info("[finaliza] EnderecoController - patchEnderecoPessoaComId");
-        return null;
+        enderecoService.alteraEnderecoPessoaAtravesId(idPessoa, idEndereco, enderecoAlteracaoRequest);
+        log.info("[finaliza] EnderecoController - patchEnderecoPessoaComId");;
     }
 }

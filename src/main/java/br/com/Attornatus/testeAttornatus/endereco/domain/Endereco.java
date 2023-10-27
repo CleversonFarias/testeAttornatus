@@ -1,5 +1,6 @@
 package br.com.Attornatus.testeAttornatus.endereco.domain;
 
+import br.com.Attornatus.testeAttornatus.endereco.application.api.EnderecoAlteracaoRequest;
 import br.com.Attornatus.testeAttornatus.endereco.application.api.EnderecoRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -33,5 +34,12 @@ public class Endereco {
         this.cep = enderecoRequest.getCep();
         this.numero = enderecoRequest.getNumero();
         this.cidade = enderecoRequest.getCidade();
+    }
+
+    public void altera(EnderecoAlteracaoRequest enderecoAlteracaoRequest) {
+        this.logradouro = enderecoAlteracaoRequest.getLogradouro();
+        this.cep = enderecoAlteracaoRequest.getCep();
+        this.numero = enderecoAlteracaoRequest.getNumero();
+        this.cidade = enderecoAlteracaoRequest.getCidade();
     }
 }

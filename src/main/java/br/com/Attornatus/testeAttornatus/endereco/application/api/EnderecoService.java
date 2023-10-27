@@ -8,4 +8,5 @@ public interface EnderecoService {
     List<EnderecoPessoaListResponse> buscaEnderecosPessoaComId(UUID idPessoa);
     EnderecoPessoaDetalheResponse buscaEnderecoPessoaComId(UUID idPessoa, UUID idEndereco);
     void deleteEnderecoPessoaAtravesId(UUID idPessoa, UUID idEndereco);
+    void alteraEnderecoPessoaAtravesId(UUID idPessoa, UUID idEndereco, EnderecoAlteracaoRequest enderecoAlteracaoRequest);
 }
