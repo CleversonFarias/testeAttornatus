@@ -53,4 +53,14 @@ public class EnderecoApplicationService implements EnderecoService {
         enderecoRepository.deletaEndereco(endereco);
         log.info("[finaliza] EnderecoApplicationService - deleteEnderecoPessoaAtravesId");
     }
+
+    @Override
+    public void alteraEnderecoPessoaAtravesId(UUID idPessoa, UUID idEndereco, EnderecoAlteracaoRequest enderecoAlteracaoRequest) {
+        log.info("[inicia] EnderecoApplicationService - deleteEnderecoPessoaAtravesId");
+        pessoaService.buscaPessoaPeloId(idPessoa);
+        Endereco endereco = enderecoRepository.buscaEnderecoPessoaComId(idEndereco);
+        endereco.altera(enderecoAlteracaoRequest);
+        enderecoRepository.salvaEndereco(endereco);
+        log.info("[finaliza] EnderecoApplicationService - deleteEnderecoPessoaAtravesId");
+    }
 }

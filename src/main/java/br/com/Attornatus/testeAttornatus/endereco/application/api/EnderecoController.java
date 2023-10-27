@@ -53,7 +53,7 @@ public class EnderecoController implements EnderecoAPI {
     public void patchEnderecoPessoaComId(UUID idPessoa, UUID idEndereco, EnderecoAlteracaoRequest enderecoAlteracaoRequest) {
         log.info("[inicia] EnderecoController - patchEnderecoPessoaComId");
         log.info("[idPessoa] {}", idPessoa);
-        EnderecoResponse alteraEndereco = enderecoService.alteraEnderecoPessoaAtravesId(idPessoa, idEndereco, enderecoAlteracaoRequest);
+        enderecoService.alteraEnderecoPessoaAtravesId(idPessoa, idEndereco, enderecoAlteracaoRequest);
         log.info("[finaliza] EnderecoController - patchEnderecoPessoaComId");;
     }
 }
